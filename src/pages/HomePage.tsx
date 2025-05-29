@@ -5,10 +5,11 @@ import FriendsList from '../components/FriendsList';
 import PlayerStats from '../components/PlayerStats';
 import Snake from '../components/games/Snake';
 import Hangman from '../components/games/Hangman';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Gamepad2 } from 'lucide-react';
+import Button from '../components/ui/Button';
 
 const HomePage: React.FC = () => {
-  const { currentUser, users } = useApp();
+  const { currentUser, users, setActiveTab } = useApp();
   
   return (
     <div className="px-4 py-6 space-y-8">
@@ -21,18 +22,59 @@ const HomePage: React.FC = () => {
           <div>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-bold text-white">Featured Games</h2>
-              <a href="#" className="text-purple-400 flex items-center text-sm hover:underline">
+              <button 
+                onClick={() => setActiveTab('games')}
+                className="text-purple-400 flex items-center text-sm hover:underline"
+              >
                 View all <ArrowRight size={16} className="ml-1" />
-              </a>
+              </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-800 rounded-xl overflow-hidden">
-                <h3 className="text-lg font-bold text-white p-4 border-b border-gray-700">Snake Game</h3>
-                <Snake />
+              <div 
+                className="bg-gray-800 rounded-xl overflow-hidden cursor-pointer transform transition-all hover:scale-[1.02]"
+                onClick={() => setActiveTab('snake')}
+              >
+                <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+                  <h3 className="text-lg font-bold text-white">Snake Game</h3>
+                  <Button 
+                    variant="primary"
+                    size="sm"
+                    className="flex items-center"
+                  >
+                    <Gamepad2 size={16} className="mr-1" />
+                    Play
+                  </Button>
+                </div>
+                <div className="p-4">
+                  <img 
+                    src="https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Snake Game"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
               </div>
-              <div className="bg-gray-800 rounded-xl overflow-hidden">
-                <h3 className="text-lg font-bold text-white p-4 border-b border-gray-700">Hangman</h3>
-                <Hangman />
+              <div 
+                className="bg-gray-800 rounded-xl overflow-hidden cursor-pointer transform transition-all hover:scale-[1.02]"
+                onClick={() => setActiveTab('hangman')}
+              >
+                <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+                  <h3 className="text-lg font-bold text-white">Hangman</h3>
+                  <Button 
+                    variant="primary"
+                    size="sm"
+                    className="flex items-center"
+                  >
+                    <Gamepad2 size={16} className="mr-1" />
+                    Play
+                  </Button>
+                </div>
+                <div className="p-4">
+                  <img 
+                    src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=500"
+                    alt="Hangman"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                </div>
               </div>
             </div>
           </div>

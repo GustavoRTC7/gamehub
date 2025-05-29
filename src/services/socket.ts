@@ -1,10 +1,11 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001';
+const SOCKET_URL = 'https://gamepulser.netlify.app';
 
 export const socket = io(SOCKET_URL, {
   autoConnect: false,
-  transports: ['websocket']
+  transports: ['websocket'],
+  path: '/socket.io'
 });
 
 export const connectSocket = (userId: string) => {

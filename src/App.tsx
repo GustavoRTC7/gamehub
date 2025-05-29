@@ -8,6 +8,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import FriendsPage from './pages/FriendsPage';
 import SnakePage from './pages/SnakePage';
 import HangmanPage from './pages/HangmanPage';
+import ButtonFootballPage from './pages/ButtonFootballPage';
 
 const MainContent: React.FC = () => {
   const { activeTab } = useApp();
@@ -30,6 +31,8 @@ const MainContent: React.FC = () => {
         return <SnakePage />;
       case 'hangman':
         return <HangmanPage />;
+      case 'button-football':
+        return <ButtonFootballPage />;
       default:
         return <HomePage />;
     }

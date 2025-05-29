@@ -9,8 +9,7 @@ const ButtonFootballPage: React.FC = () => {
   const { updateGameState } = useGameStore();
 
   useEffect(() => {
-    // Connect to socket when component mounts
-    const userId = 'test-user'; // Replace with actual user ID from auth
+    const userId = 'test-user';
     connectSocket(userId);
 
     socket.on('connect', () => {
@@ -29,8 +28,8 @@ const ButtonFootballPage: React.FC = () => {
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">Button Football</h1>
-        <p className="text-gray-400">Play the classic table football game online</p>
+        <h1 className="text-2xl font-bold text-white">Futebol de Botão</h1>
+        <p className="text-gray-400">Jogue contra outros jogadores em tempo real</p>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">

@@ -17,6 +17,12 @@ const GamesPage: React.FC = () => {
       title: 'Jogo da Forca',
       description: 'Adivinhe a palavra escolhendo letras. Disponível em português com temas de objetos e comidas.',
       image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=500'
+    },
+    {
+      id: 'button-football',
+      title: 'Futebol de Botão',
+      description: 'Jogue futebol de botão online contra outros jogadores em tempo real. Participe de torneios e campeonatos.',
+      image: 'https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=500'
     }
   ];
 
@@ -27,7 +33,7 @@ const GamesPage: React.FC = () => {
         <p className="text-gray-400">Escolha um jogo para começar</p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {games.map(game => (
           <div
             key={game.id}

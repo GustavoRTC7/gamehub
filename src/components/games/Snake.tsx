@@ -79,6 +79,11 @@ const Snake: React.FC = () => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (gameOver) return;
 
+      // Prevent default behavior for arrow keys
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+        e.preventDefault();
+      }
+
       switch (e.key) {
         case 'ArrowUp':
           if (direction.y !== 1) setDirection({ x: 0, y: -1 });

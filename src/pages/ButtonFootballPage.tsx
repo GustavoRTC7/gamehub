@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useGameStore } from '../store/gameStore';
-import ButtonFootball from '../components/game/ButtonFootball';
+import ButtonFootball3D from '../components/game/ButtonFootball3D';
 import GameControls from '../components/game/GameControls';
 import Chat from '../components/game/Chat';
 import { socket, connectSocket } from '../services/socket';
@@ -28,7 +28,7 @@ const ButtonFootballPage: React.FC = () => {
   return (
     <div className="px-4 py-6">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">Futebol de Botão</h1>
+        <h1 className="text-2xl font-bold text-white">Futebol de Botão 3D</h1>
         <p className="text-gray-400">Jogue contra outros jogadores em tempo real</p>
       </div>
       
@@ -36,7 +36,7 @@ const ButtonFootballPage: React.FC = () => {
         <div className="lg:col-span-3">
           <div className="space-y-4">
             <GameControls />
-            <ButtonFootball />
+            <ButtonFootball3D />
           </div>
         </div>
         <div className="lg:col-span-1">
@@ -47,4 +47,4 @@ const ButtonFootballPage: React.FC = () => {
   );
 };
 
-export default ButtonFootballPage;
+export default ButtonFootballPage
